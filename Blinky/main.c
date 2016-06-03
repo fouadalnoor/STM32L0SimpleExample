@@ -3,7 +3,7 @@
 #include "Board_Buttons.h"
 
 int main(){
-	//initilise LED's
+	//initilise LED's 
 	
 	LED_Initialize();
 	
@@ -21,11 +21,14 @@ while(1){
 	
 	if(Buttons_GetState())
 	{
+		//turn on the LED's
 		LED_On(0);
 		LED_On(1);
 	}
 	
 	else {
+		
+		//Turn off the LED's
 		LED_Off(0);
 		LED_Off(1);
 	}
