@@ -29,13 +29,16 @@ Project File Date:  06/01/2016
 Rebuild target 'Target 1'
 assembling startup_stm32l053xx.s...
 compiling RTX_Conf_CM.c...
+compiling Buttons_STM32L053-Discovery.c...
 compiling main.c...
+main.c(13): warning:  #177-D: variable "initLEDh" was declared but never referenced
+  	unsigned long int initLEDh = 0x3; //in hex
+main.c: 1 warning, 0 errors
 compiling LED_STM32L053-Discovery.c...
 compiling system_stm32l0xx.c...
-compiling Buttons_STM32L053-Discovery.c...
 linking...
-Program Size: Code=6360 RO-data=336 RW-data=56 ZI-data=4752  
-".\Objects\blinkyproject.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=6012 RO-data=328 RW-data=56 ZI-data=4752  
+".\Objects\blinkyproject.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -106,7 +109,7 @@ Package Vendor: Keil
 
    * Component: Keil.STM32L053-Discovery::Board Support:Buttons:1.0.0
       Source file:   Boards\ST\STM32L053-Discovery\Common\Buttons_STM32L053-Discovery.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
