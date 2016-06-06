@@ -1400,13 +1400,13 @@ Image component sizes
 
         94          6          0          0          0       1172   buttons_stm32l053-discovery.o
        328         26          8          0          0       2615   led_stm32l053-discovery.o
-        34          0          0          0          0       4967   main.o
+        34          0          0          0          0       4959   main.o
        130         28        104         20       3016       9235   rtx_conf_cm.o
         60         28        192          0       1536        712   startup_stm32l053xx.o
        104         16          0          0          0        481   system_stm32l0xx.o
 
     ----------------------------------------------------------------------
-       754        104        336         20       4552      19182   Object Totals
+       754        104        336         20       4552      19174   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          0          0          0   (incl. Padding)
 
@@ -1472,8 +1472,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6336        648        336         56       4752      84233   Grand Totals
-      6336        648        336         56       4752      84233   ELF Image Totals
+      6336        648        336         56       4752      84225   Grand Totals
+      6336        648        336         56       4752      84225   ELF Image Totals
       6336        648        336         56          0          0   ROM Totals
 
 ==============================================================================
