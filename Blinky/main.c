@@ -25,15 +25,28 @@ int main(){
 	GPIOA->OSPEEDR |= (1UL<< 10);
 	GPIOA->OSPEEDR &= ~(1UL<< 11);
 
-//Set no pull-up or pull down as 
+//Set no pull-up or pull down
 	GPIOA->PUPDR &= ~(1UL<< 10); //unset bit number 10
 	GPIOA->PUPDR &= ~(1UL<< 11); //unset bit number 11
 	
-	//initilise buttons
+	// Automatically initilise buttons
 	//Buttons_Initialize();
 	
+	//Manually 
+	//Push button connected to PA0. 
+	
+	GPIOA->MODER &= ~(1UL<<0);//unset bit number 0
+	GPIOA->MODER &= ~(1UL<<1);//unset bit number 1 
+	
+	//Set no pull-up or pull down
+	GPIOA->PUPDR &= ~(1UL<<0); //unset bit number 10
+	GPIOA->PUPDR &= ~(1UL<<1); //unset bit number 11
+	
+	
 	//Turn on  Green LED
-	GPIOA->BSRR |= (1UL<< 5); //Set Bit number 5 (i.e GPIOA pin 5). 
+	GPIOA->BSRR |= (1UL<< 5); //Set Bit number 5 (i.e GPIOA pin 5).
+
+ 
 	//LED_Off(0);
 	
 	//Turn on Red LED  
@@ -41,22 +54,37 @@ int main(){
 	
 while(1){
 	
-	/*
-	if(Buttons_GetState())
+	//Read the Input data register 
+	 int InputDataReg = GPIOA->IDR; 
+	
+	// Turn off LED
+	//GPIOA->BSRR &= ~ (1UL<< 5); //unset Bit number 5 (i.e GPIOA pin 5). 
+	
+	if(((InputDataReg & (1UL<<0)) != 0))
 	{
+		
+		//Turn on lED manually
+		
+		GPIOA->BSRR |= (1UL<< 5); //Set Bit number 5 (i.e GPIOA pin 5).
+		
+		
 		//turn on the LED's
-		LED_On(0);
-		LED_On(1);
+		//LED_On(0);
+		//LED_On(1);
 	}
 	
 	else {
 		
+		// Turn off LED manually 
+	GPIOA->BSRR &= ~ (1UL<< 5); //unset Bit number 5 (i.e GPIOA pin 5).
+	GPIOA->BSRR |= (1UL<< 21); //Set Bit number 21 (in order to reset it) 
+		
 		//Turn off the LED's
-		LED_Off(0);
-		LED_Off(1);
+		//LED_Off(0);
+		//LED_Off(1);
 	}
 	
-	*/
+	
 }
 	
 	
